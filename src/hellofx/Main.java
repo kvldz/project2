@@ -1,93 +1,121 @@
-package hellofx;
+    package hellofx;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import java.io.IOException;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
+    import javafx.application.Application;
+    import javafx.fxml.FXMLLoader;
+    import javafx.scene.Parent;
+    import javafx.scene.Scene;
+    import javafx.stage.Stage;
 
-public class Main extends Application {
+    import java.io.IOException;
+    import java.util.HashMap;
+    import java.util.Map;
 
-    private Stage primaryStage;
-    private static final Map<String, String> users = new HashMap<>(); // In-memory user storage
+    public class Main extends Application {
 
-    public static Map<String, String> getUsers() {
-        return users;
-    }
+        private Stage primaryStage;
+        private static final Map<String, String> users = new HashMap<>();
+        private String currentUser;
 
-    @Override
-    public void start(Stage primaryStage) {
-        this.primaryStage = primaryStage;
-        showLogin();
-    }
+        public static void main(String[] args) {
+            // Preload sample user
+            users.put("admin", "admin123");
+            launch(args);
+        }
 
-    public void showLogin() {
-        try {
-            URL url = getClass().getResource("loginv2.fxml");
-            if (url == null) {
-                System.err.println("FXML file not found: loginv2.fxml");
-                return;
+        public static Map<String, String> getUsers() {
+            return users;
+        }
+
+        public String getCurrentUser() {
+            return currentUser;
+        }
+
+        public void setCurrentUser(String currentUser) {
+            this.currentUser = currentUser;
+        }
+
+        public Stage getPrimaryStage() {
+            return primaryStage;
+        }
+
+        @Override
+        public void start(Stage primaryStage) {
+            this.primaryStage = primaryStage;
+            showLogin();
+        }
+
+        public void showLogin() {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("loginv2.fxml"));
+                Parent root = loader.load();
+
+                LoginController controller = loader.getController();
+                controller.setMainApp(this);
+
+                Scene scene = new Scene(root, 620, 445);
+                primaryStage.setTitle("Login");
+                primaryStage.setScene(scene);
+                primaryStage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            FXMLLoader loader = new FXMLLoader(url);
-            Parent root = loader.load();
-            Scene scene = new Scene(root, 620, 445); // Set appropriate size
-            primaryStage.setTitle("Login");
-            primaryStage.setScene(scene);
-            primaryStage.show();
+        }
 
-            LoginController controller = loader.getController();
-            controller.setMainApp(this);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("Error loading loginv2.fxml: " + e.getMessage());
+        public void showSignup() {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("signupv2.fxml"));
+                Parent root = loader.load();
+
+                SignupController controller = loader.getController();
+                controller.setMainApp(this);
+
+                Scene scene = new Scene(root, 620, 445);
+                primaryStage.setTitle("Sign Up");
+                primaryStage.setScene(scene);
+                primaryStage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public void showAddProduct() {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("addproduct.fxml"));
+                Parent root = loader.load();
+        
+                AddProductController controller = loader.getController();
+                controller.setMainApp(this);
+        
+                Scene scene = new Scene(root, 1100, 600);
+                primaryStage.setTitle("Add Product");
+                primaryStage.setScene(scene);
+                primaryStage.setMaximized(true);
+                primaryStage.show();
+        
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        
+
+        public void showMainApp() {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage.fxml"));
+                Parent root = loader.load();
+
+                DashboardController controller = loader.getController();
+                controller.setMainApp(this); // this also calls initializeUser()
+
+                Scene scene = new Scene(root, 1100, 600);
+                primaryStage.setTitle("Dashboard");
+                primaryStage.setScene(scene);
+                primaryStage.setMaximized(true);
+                primaryStage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
-
-    public void showSignup() {
-        try {
-            URL url = getClass().getResource("signupv2.fxml");
-            if (url == null) {
-                System.err.println("FXML file not found: signupv2.fxml");
-                return;
-            }
-            FXMLLoader loader = new FXMLLoader(url);
-            Parent root = loader.load();
-            Scene scene = new Scene(root, 620, 445); // Set appropriate size
-            primaryStage.setTitle("Sign Up");
-            primaryStage.setScene(scene);
-            primaryStage.show();
-            SignupController controller = loader.getController();
-            controller.setMainApp(this);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("Error loading signupv2.fxml: " + e.getMessage());
-        }
-    }
-
-    public void showMainApp() {
-        try {
-            URL url = getClass().getResource("hellofx.fxml");
-            if (url == null) {
-                System.err.println("FXML file not found: hellofx.fxml");
-                return;
-            }
-            FXMLLoader loader = new FXMLLoader(url);
-            Parent root = loader.load();
-            Scene scene = new Scene(root, 600, 400);
-            primaryStage.setTitle("Main Application");
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("Error loading hellofx.fxml: " + e.getMessage());
-        }
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}

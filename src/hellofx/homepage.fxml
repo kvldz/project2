@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hellofx.DashboardController">
+   <children>
+      <AnchorPane>
+         <children>
+            <BorderPane AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="45.0" styleClass="semi-top-formf" stylesheets="@dashboarddesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane styleClass="top-form" stylesheets="@dashboarddesign.css" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="6.0" text="Inventory &amp; Sales Management System">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefWidth="220.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane styleClass="nav-form" stylesheets="@dashboarddesign.css" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label alignment="CENTER" layoutY="20.0" prefHeight="43.0" prefWidth="219.0" text="Hello," textFill="WHITE">
+                                 <font>
+                                    <Font size="35.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="usernameLabel" alignment="CENTER" layoutY="61.0" prefHeight="43.0" prefWidth="218.0" text="Admin" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Line layoutY="106.0" startX="0" endX="200" stroke="WHITE" />
+                              <Button layoutY="162.0" prefHeight="26.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@dashboarddesign.css" text="Home" textFill="WHITE" />
+                              <Button fx:id="addProductButton" layoutY="187.0" prefHeight="26.0" prefWidth="200.0"
+        styleClass="nav-btn" stylesheets="@dashboarddesign.css"
+        text="Add Products" textFill="WHITE" onAction="#handleAddProduct" />
+                              <Button layoutY="212.0" prefHeight="26.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@dashboarddesign.css" text="Orders" textFill="WHITE" />
+                              <Button fx:id="logoutButton" layoutY="515.0" styleClass="logout-btn" stylesheets="@dashboarddesign.css" text="Logout" textFill="WHITE" AnchorPane.bottomAnchor="3.0" onAction="#handleLogoutAction" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane styleClass="white-bg" stylesheets="@dashboarddesign.css" AnchorPane.topAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" prefHeight="145.0">
+                           <children>
+                              <AnchorPane layoutX="26.0" layoutY="13.0" prefWidth="200.0" styleClass="card" stylesheets="@dashboarddesign.css">
+                                 <children>
+                                    <Label alignment="CENTER" layoutY="94.0" prefHeight="17.0" prefWidth="197.0" text="Today's Number Orders" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutY="22.0" prefHeight="63.0" prefWidth="196.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font size="50.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="333.0" layoutY="12.0" prefWidth="200.0" styleClass="card" stylesheets="@dashboarddesign.css">
+                                 <children>
+                                    <Label alignment="CENTER" layoutY="90.0" prefHeight="17.0" prefWidth="197.0" text="Total Income" textFill="WHITE">
+                                     <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutY="18.0" prefHeight="63.0" prefWidth="196.0" text="₱ 0" textFill="WHITE">
+                                       <font>
+                                          <Font size="50.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="623.0" layoutY="10.0" prefWidth="200.0" styleClass="card" stylesheets="@dashboarddesign.css">
+                                 <children>
+                                    <Label alignment="CENTER" layoutY="94.0" prefHeight="17.0" prefWidth="197.0" text="Available Products" textFill="WHITE">
+                                     <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutY="15.0" prefHeight="63.0" prefWidth="196.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font size="50.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+
+                        <!-- Charts Row -->
+                        <HBox spacing="10.0" AnchorPane.topAnchor="185.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.bottomAnchor="14.0">
+                           <children>
+                              <AnchorPane styleClass="white-bg shadow" stylesheets="@dashboarddesign.css" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <AreaChart title="Income Data Chart" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <xAxis><CategoryAxis /></xAxis>
+                                       <yAxis><NumberAxis /></yAxis>
+                                    </AreaChart>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane styleClass="white-bg shadow" stylesheets="@dashboarddesign.css" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <BarChart title="Order Data Chart" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <xAxis><CategoryAxis /></xAxis>
+                                       <yAxis><NumberAxis /></yAxis>
+                                    </BarChart>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

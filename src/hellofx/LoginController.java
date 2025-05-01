@@ -2,10 +2,8 @@ package hellofx;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+
 import java.util.Map;
 
 public class LoginController {
@@ -29,18 +27,20 @@ public class LoginController {
     public void handleLoginButtonAction(ActionEvent event) {
         String username = usernameField.getText();
         String password = passwordField.getText();
-
-        // Access the user map from the Main class
+    
         Map<String, String> users = Main.getUsers();
-
+    
         if (users.containsKey(username) && users.get(username).equals(password)) {
-            // Successful login
-            showAlert(Alert.AlertType.INFORMATION, "Login Successful", "Welcome, " + username + "!");
-            if (mainApp != null) {
-                mainApp.showMainApp(); // Switch to the main application scene
-            }
+            mainApp.setCurrentUser(username);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Login Successful");
+            alert.setHeaderText(null);
+            alert.setContentText("Welcome, " + username + "!");
+            alert.showAndWait(); // Wait until user clicks OK
+    
+            // Show dashboard after OK is clicked
+            mainApp.showMainApp();
         } else {
-            // Login failed
             showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid username or password.");
             usernameField.clear();
             passwordField.clear();
@@ -49,9 +49,7 @@ public class LoginController {
 
     @FXML
     public void handleSignupButtonAction(ActionEvent event) {
-        if (mainApp != null) {
-            mainApp.showSignup(); // Switch to the signup scene
-        }
+        mainApp.showSignup();
     }
 
     private void showAlert(Alert.AlertType alertType, String title, String content) {
