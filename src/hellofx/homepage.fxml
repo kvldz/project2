@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.scene.chart.AreaChart?>
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,15 +14,15 @@
    <children>
       <AnchorPane>
          <children>
-            <BorderPane AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <top>
-                  <AnchorPane prefHeight="45.0" styleClass="semi-top-formf" stylesheets="@dashboarddesign.css" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="45.0" style="-fx-background-color: #455A64;" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane styleClass="top-form" stylesheets="@dashboarddesign.css" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <AnchorPane style="-fx-background-color: #546E7A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label layoutX="14.0" layoutY="6.0" text="Inventory &amp; Sales Management System">
+                              <Label layoutX="14.0" layoutY="11.0" text="Inventory &amp; Sales Management System" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="13.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
                            </children>
@@ -37,25 +33,35 @@
                <left>
                   <AnchorPane prefWidth="220.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane styleClass="nav-form" stylesheets="@dashboarddesign.css" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <AnchorPane style="-fx-background-color: #37474F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label alignment="CENTER" layoutY="20.0" prefHeight="43.0" prefWidth="219.0" text="Hello," textFill="WHITE">
+                              <Label alignment="CENTER" layoutY="15.0" prefHeight="43.0" prefWidth="219.0" text="Hello," textFill="WHITE">
                                  <font>
-                                    <Font size="35.0" />
+                                    <Font size="30.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="usernameLabel" alignment="CENTER" layoutY="61.0" prefHeight="43.0" prefWidth="218.0" text="Admin" textFill="WHITE">
+                              <Label fx:id="usernameLabel" alignment="CENTER" layoutY="50.0" prefHeight="43.0" prefWidth="218.0" text="Admin" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="35.0" />
+                                    <Font name="System Bold" size="30.0" />
                                  </font>
                               </Label>
-                              <Line layoutY="106.0" startX="0" endX="200" stroke="WHITE" />
-                              <Button layoutY="162.0" prefHeight="26.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@dashboarddesign.css" text="Home" textFill="WHITE" />
-                              <Button fx:id="addProductButton" layoutY="187.0" prefHeight="26.0" prefWidth="200.0"
-        styleClass="nav-btn" stylesheets="@dashboarddesign.css"
-        text="Add Products" textFill="WHITE" onAction="#handleAddProduct" />
-                              <Button layoutY="212.0" prefHeight="26.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@dashboarddesign.css" text="Orders" textFill="WHITE" />
-                              <Button fx:id="logoutButton" layoutY="515.0" styleClass="logout-btn" stylesheets="@dashboarddesign.css" text="Logout" textFill="WHITE" AnchorPane.bottomAnchor="3.0" onAction="#handleLogoutAction" />
+                              <Line endX="200" layoutY="95.0" startX="0" stroke="WHITE" />
+                              <Button layoutY="150.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: center-left; -fx-padding: 0 0 0 20;" text="Home" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="addProductButton" layoutY="190.0" onAction="#handleAddProduct" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: center-left; -fx-padding: 0 0 0 20;" text="Add Products" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="orderButton" layoutX="0.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleOrderButton" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: center-left; -fx-padding: 0 0 0 20;" text="Orders" textFill="WHITE" />
+                              <Button fx:id="logoutButton" layoutX="10.0" layoutY="510.0" mnemonicParsing="false" onAction="#handleLogoutAction" style="-fx-background-color: #D32F2F; -fx-text-fill: white;" text="Logout" AnchorPane.bottomAnchor="10.0" prefHeight="35.0" prefWidth="200.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
                            </children>
                         </AnchorPane>
                      </children>
@@ -64,70 +70,61 @@
                <center>
                   <AnchorPane BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane styleClass="white-bg" stylesheets="@dashboarddesign.css" AnchorPane.topAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" prefHeight="145.0">
+                        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="421.0" prefWidth="957.0" style="-fx-background-color: #ECEFF1; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <children>
-                              <AnchorPane layoutX="26.0" layoutY="13.0" prefWidth="200.0" styleClass="card" stylesheets="@dashboarddesign.css">
+                              <AnchorPane layoutX="4.0" layoutY="27.0" prefHeight="111.0" prefWidth="946.0" style="-fx-background-color: #2196F3; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
                                  <children>
-                                    <Label alignment="CENTER" layoutY="94.0" prefHeight="17.0" prefWidth="197.0" text="Today's Number Orders" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                    <Label alignment="CENTER" layoutY="22.0" prefHeight="63.0" prefWidth="196.0" text="0" textFill="WHITE">
+                                    <Label fx:id="totalOrdersLabel" alignment="CENTER" layoutY="12.0" prefHeight="80.0" prefWidth="944.0" text="0" textFill="WHITE">
                                        <font>
                                           <Font size="50.0" />
                                        </font>
                                     </Label>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane layoutX="333.0" layoutY="12.0" prefWidth="200.0" styleClass="card" stylesheets="@dashboarddesign.css">
-                                 <children>
-                                    <Label alignment="CENTER" layoutY="90.0" prefHeight="17.0" prefWidth="197.0" text="Total Income" textFill="WHITE">
-                                     <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                    <Label alignment="CENTER" layoutY="18.0" prefHeight="63.0" prefWidth="196.0" text="₱ 0" textFill="WHITE">
+                                    <Label alignment="BOTTOM_LEFT" contentDisplay="TOP" layoutX="3.0" layoutY="1.0" prefHeight="99.0" prefWidth="344.0" text=" Number of Orders:" textFill="WHITE">
                                        <font>
-                                          <Font size="50.0" />
+                                          <Font name="System Bold" size="25.0" />
                                        </font>
-                                    </Label>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane layoutX="623.0" layoutY="10.0" prefWidth="200.0" styleClass="card" stylesheets="@dashboarddesign.css">
-                                 <children>
-                                    <Label alignment="CENTER" layoutY="94.0" prefHeight="17.0" prefWidth="197.0" text="Available Products" textFill="WHITE">
-                                     <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                    <Label alignment="CENTER" layoutY="15.0" prefHeight="63.0" prefWidth="196.0" text="0" textFill="WHITE">
-                                       <font>
-                                          <Font size="50.0" />
-                                       </font>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
                                     </Label>
                                  </children>
                               </AnchorPane>
                            </children>
                         </AnchorPane>
 
-                        <!-- Charts Row -->
-                        <HBox spacing="10.0" AnchorPane.topAnchor="185.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.bottomAnchor="14.0">
+                        <HBox layoutY="165.0" prefHeight="268.0" prefWidth="957.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="165.0">
                            <children>
-                              <AnchorPane styleClass="white-bg shadow" stylesheets="@dashboarddesign.css" HBox.hgrow="ALWAYS">
+                              <AnchorPane prefWidth="957.0" style="-fx-background-color: #ECEFF1; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <AreaChart title="Income Data Chart" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                                       <xAxis><CategoryAxis /></xAxis>
-                                       <yAxis><NumberAxis /></yAxis>
-                                    </AreaChart>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane styleClass="white-bg shadow" stylesheets="@dashboarddesign.css" HBox.hgrow="ALWAYS">
-                                 <children>
-                                    <BarChart title="Order Data Chart" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                                       <xAxis><CategoryAxis /></xAxis>
-                                       <yAxis><NumberAxis /></yAxis>
-                                    </BarChart>
+                                    <AnchorPane layoutX="447.0" layoutY="-2.0" style="-fx-background-color: #ECEFF1; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" />
+                                    <AnchorPane layoutX="1.0" layoutY="-6.0" prefHeight="118.0" prefWidth="943.0" style="-fx-background-color: #4CAF50; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+                                       <children>
+                                          <Label fx:id="totalIncomeLabel" alignment="CENTER" layoutY="18.0" prefHeight="100.0" prefWidth="944.0" text="₱ 0.00" textFill="WHITE">
+                                             <font>
+                                                <Font size="50.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="BOTTOM_LEFT" prefHeight="105.0" prefWidth="347.0" text=" Total Income:" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="25.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="1.0" layoutY="126.0" prefHeight="115.0" prefWidth="939.0" style="-fx-background-color: #FFC107; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+                                       <children>
+                                          <Label fx:id="availableProductLabel" alignment="CENTER" layoutY="15.0" prefHeight="100.0" prefWidth="945.0" text="0" textFill="WHITE">
+                                             <font>
+                                                <Font size="50.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="BOTTOM_LEFT" layoutY="-1.0" prefHeight="102.0" prefWidth="352.0" text=" Available Products" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="25.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
                                  </children>
                               </AnchorPane>
                            </children>

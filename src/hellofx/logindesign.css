@@ -51,3 +51,122 @@
 
 }
 
+
+.left-panel {
+    -fx-background-color: #3498db; 
+}
+
+.right-panel {
+    -fx-background-color: #f4f6f8; 
+}
+
+.welcome-label {
+    -fx-text-fill: #333;
+}
+
+.input-field {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5;
+    -fx-padding: 8;
+    -fx-prompt-text-fill: #777;
+}
+
+.primary-button {
+    -fx-background-color: #28a745; 
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #218838;
+}
+
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #6c757d; 
+    -fx-border-radius: 5;
+    -fx-text-fill: #6c757d;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #e9ecef;
+}
+
+.close-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #dc3545; 
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-font-size: 16px;
+}
+
+.close-button:hover {
+    -fx-text-fill: #c82333;
+}
+
+
+.left-panel {
+    -fx-background-color: #3498db; 
+}
+
+.right-panel {
+    -fx-background-color: #f4f6f8; 
+}
+
+.signup-title {
+    -fx-text-fill: #333; 
+}
+
+.input-field {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5;
+    -fx-padding: 8;
+    -fx-prompt-text-fill: #777;
+}
+
+.primary-button {
+    -fx-background-color: #28a745; 
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #218838;
+}
+
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #6c757d; 
+    -fx-border-radius: 5;
+    -fx-text-fill: #6c757d;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #e9ecef;
+}
+
+.close-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #dc3545; 
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-font-size: 16px;
+}
+
+.close-button:hover {
+    -fx-text-fill: #c82333;
+}

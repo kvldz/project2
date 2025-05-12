@@ -24,7 +24,6 @@ public class SignupController {
 
     private Main mainApp;
 
-    // Access the user map from the Main class
     private static final Map<String, String> users = Main.getUsers();
 
     public void setMainApp(Main mainApp) {
@@ -54,7 +53,6 @@ public class SignupController {
             return;
         }
 
-        // In a real application, you would hash the password before saving!
         users.put(username, password);
         showAlert(Alert.AlertType.INFORMATION, "Signup Successful", "Account created for " + username + ". You can now log in.");
 

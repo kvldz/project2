@@ -1,12 +1,9 @@
 package hellofx;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.Button;
-import java.io.IOException;
+import javafx.scene.control.Label;
+import javafx.collections.ObservableList;
 
 public class DashboardController {
 
@@ -19,19 +16,48 @@ public class DashboardController {
     @FXML
     private Button addProductButton;
 
+   @FXML private Button orderButton;
+
+    @FXML
+private Label totalOrdersLabel;
+
+@FXML
+private Label totalIncomeLabel;
+
+
+    @FXML
+    private Label availableProductLabel;
+
     private Main mainApp;
 
-    public void setMainApp(Main mainApp) {
-        this.mainApp = mainApp;
-        initializeUser();
-    }
+   public void setMainApp(Main mainApp) {
+    this.mainApp = mainApp;
+    mainApp.setDashboardController(this); 
+    initializeUser();
+    updateAvailableProductCount();
+    updateIncomeAndOrders();
+}
+
 
     private void initializeUser() {
         if (mainApp != null && mainApp.getCurrentUser() != null) {
-            usernameLabel.setText("Welcome, " + mainApp.getCurrentUser());
+            usernameLabel.setText(mainApp.getCurrentUser());
         } else {
             usernameLabel.setText("Welcome, Guest");
         }
+    }
+
+    private void updateAvailableProductCount() {
+        if (mainApp == null) return;
+
+        ObservableList<Product> productList = mainApp.getProductList();
+
+        int totalAvailable = productList.stream()
+            .filter(p -> "Available".equalsIgnoreCase(p.getStatus()))
+            .mapToInt(Product::getQuantity)
+            .sum();
+
+        availableProductLabel.setText(String.valueOf(totalAvailable));
     }
 
     @FXML
@@ -44,6 +70,25 @@ public class DashboardController {
 
     @FXML
     private void handleAddProduct() {
-        mainApp.showAddProduct();
+        if (mainApp != null) {
+            mainApp.showAddProduct();
+        }
     }
+
+   @FXML
+private void handleOrderButton() {
+    if (mainApp != null) {
+        mainApp.showOrderButton();
+    }
+}
+
+
+public void updateIncomeAndOrders() {
+    if (mainApp != null) {
+        double totalIncome = mainApp.getTotalIncome();
+        int totalOrders = mainApp.getTotalOrders();
+        totalIncomeLabel.setText("₱" + String.format("%.2f", totalIncome));
+        totalOrdersLabel.setText("" + totalOrders);
+    }
+}
 }

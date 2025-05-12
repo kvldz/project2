@@ -13,8 +13,7 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <!-- Left Pane -->
-            <AnchorPane prefHeight="445.0" prefWidth="314.0" styleClass="left-form" stylesheets="@logindesign.css">
+            <AnchorPane prefHeight="445.0" prefWidth="314.0" styleClass="left-panel" stylesheets="@logindesign.css">
                <children>
                   <Text fill="WHITE" layoutX="40.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory &amp; Sales Management System" AnchorPane.topAnchor="214.0">
                      <font>
@@ -24,22 +23,20 @@
                </children>
             </AnchorPane>
 
-            <!-- Right Pane -->
-            <AnchorPane layoutX="313.0" prefHeight="445.0" prefWidth="314.0" styleClass="right-form" stylesheets="@logindesign.css" AnchorPane.rightAnchor="-2.0">
+            <AnchorPane layoutX="313.0" prefHeight="445.0" prefWidth="314.0" styleClass="right-panel" stylesheets="@logindesign.css" AnchorPane.rightAnchor="10.0">
                <children>
-                  <Label layoutX="58.0" layoutY="90.0" text=" Welcome Back Admin">
+                  <Label layoutX="0.0" layoutY="90.0" text=" Welcome Back Admin" styleClass="welcome-label" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
                      <font>
-                        <Font name="Tahoma" size="20.0" />
+                        <Font name="Tahoma Bold" size="20.0"/>
                      </font>
                   </Label>
 
-                  <TextField fx:id="usernameField" layoutX="46.0" layoutY="150.0" prefHeight="30.0" prefWidth="220.0" promptText="Username" styleClass="textfield" />
-                  <PasswordField fx:id="passwordField" layoutX="46.0" layoutY="195.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="textfield" />
+                  <TextField fx:id="usernameField" layoutX="46.0" layoutY="150.0" prefHeight="30.0" prefWidth="220.0" promptText="Username" styleClass="input-field" />
+                  <PasswordField fx:id="passwordField" layoutX="46.0" layoutY="195.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="input-field" />
 
-                  <Button fx:id="loginButton" layoutX="46.0" layoutY="240.0" mnemonicParsing="false" prefWidth="220.0" styleClass="login-btn" text="LOGIN" onAction="#handleLoginButtonAction" />
-                  <Button fx:id="signupButton" layoutX="81.0" layoutY="280.0" mnemonicParsing="false" prefWidth="150.0" text="SIGN UP" onAction="#handleSignupButtonAction" />
+                  <Button fx:id="loginButton" layoutX="46.0" layoutY="240.0" mnemonicParsing="false" prefWidth="220.0" styleClass="primary-button" text="LOGIN" onAction="#handleLoginButtonAction" />
+                  <Button fx:id="signupButton" layoutX="81.0" layoutY="280.0" mnemonicParsing="false" prefWidth="150.0" styleClass="secondary-button" text="SIGN UP" onAction="#handleSignupButtonAction" />
 
-                  <Button layoutX="255.0" layoutY="14.0" mnemonicParsing="false" prefWidth="40.0" styleClass="close" text="X" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="2.0" />
                </children>
             </AnchorPane>
          </children>
