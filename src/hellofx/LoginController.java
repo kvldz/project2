@@ -36,9 +36,8 @@ public class LoginController {
             alert.setTitle("Login Successful");
             alert.setHeaderText(null);
             alert.setContentText("Welcome, " + username + "!");
-            alert.showAndWait(); // Wait until user clicks OK
+            alert.showAndWait(); 
     
-            // Show dashboard after OK is clicked
             mainApp.showMainApp();
         } else {
             showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid username or password.");

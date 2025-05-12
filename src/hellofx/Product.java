@@ -20,7 +20,6 @@ public class Product {
         this.status = new SimpleStringProperty(status);
     }
 
-    // Getters
     public String getName() {
         return name.get();
     }
@@ -37,7 +36,6 @@ public class Product {
         return status.get();
     }
 
-    // Setters
     public void setName(String name) {
         this.name.set(name);
     }
@@ -54,7 +52,6 @@ public class Product {
         this.status.set(status);
     }
 
-    // Property accessors (required by TableView)
     public StringProperty nameProperty() {
         return name;
     }

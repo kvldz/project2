@@ -173,7 +173,7 @@ public class Main extends Application {
 
             DashboardController controller = loader.getController();
             controller.setMainApp(this);
-            this.dashboardController = controller; // Set the dashboardController here
+            this.dashboardController = controller; 
 
             Scene scene = new Scene(root, 1100, 600);
             primaryStage.setTitle("Dashboard");

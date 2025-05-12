@@ -284,7 +284,7 @@ public class OrderController {
                         .findFirst()
                         .ifPresent(product -> {
                             int newQuantity = product.getQuantity() - orderItem.getQuantity();
-                            product.setQuantity(Math.max(0, newQuantity)); // Ensure quantity doesn't go below zero
+                            product.setQuantity(Math.max(0, newQuantity)); 
                         });
             }
         }
